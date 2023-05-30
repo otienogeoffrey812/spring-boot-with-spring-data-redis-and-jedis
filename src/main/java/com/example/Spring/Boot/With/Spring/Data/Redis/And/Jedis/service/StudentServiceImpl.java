@@ -30,4 +30,9 @@ public class StudentServiceImpl implements StudentService{
     public Boolean updateStudent(long id, Student student) {
         return studentDao.updateStudent(id, student);
     }
+
+    @Override
+    public Boolean deleteStudentById(long id) {
+        return studentDao.deleteStudentById(id);
+    }
 }

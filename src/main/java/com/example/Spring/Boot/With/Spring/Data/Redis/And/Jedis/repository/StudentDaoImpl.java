@@ -54,4 +54,15 @@ public class StudentDaoImpl implements StudentDao{
             return false;
         }
     }
+
+    @Override
+    public Boolean deleteStudentById(long id) {
+        try {
+            redisTemplate.opsForHash().delete(KEY, String.valueOf(id));
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
