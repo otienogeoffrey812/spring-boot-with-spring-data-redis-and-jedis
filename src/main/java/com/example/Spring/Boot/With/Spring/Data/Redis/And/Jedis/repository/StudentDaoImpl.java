@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class StudentDaoImpl implements StudentDao{
     @Autowired
@@ -21,5 +23,14 @@ public class StudentDaoImpl implements StudentDao{
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public List<Student> fetchAllStudents() {
+
+        List<Student> students;
+
+        students = redisTemplate.opsForHash().values(KEY);
+        return students;
     }
 }

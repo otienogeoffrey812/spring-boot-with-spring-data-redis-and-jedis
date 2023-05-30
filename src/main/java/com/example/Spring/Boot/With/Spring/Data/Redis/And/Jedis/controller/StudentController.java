@@ -5,10 +5,9 @@ import com.example.Spring.Boot.With.Spring.Data.Redis.And.Jedis.service.StudentS
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 
@@ -26,5 +25,14 @@ public class StudentController {
         }else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
+    }
+    @GetMapping("/students")
+    public ResponseEntity<List<Student>> fetchAllStudents(){
+
+        List<Student> students;
+
+        students =  studentService.fetchAllStudents();
+
+        return ResponseEntity.ok().body(students);
     }
 }
