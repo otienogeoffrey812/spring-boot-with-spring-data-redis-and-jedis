@@ -35,4 +35,14 @@ public class StudentController {
 
         return ResponseEntity.ok().body(students);
     }
+
+    @GetMapping("/student/{id}")
+    public ResponseEntity<Student> fetchStudentById(@PathVariable("id") long id){
+
+        Student student;
+
+        student =  studentService.fetchStudentById(id);
+
+        return ResponseEntity.ok().body(student);
+    }
 }

@@ -9,4 +9,6 @@ public interface StudentService {
     Boolean saveStudent(Student student);
 
     List<Student> fetchAllStudents();
+
+    Student fetchStudentById(long id);
 }
