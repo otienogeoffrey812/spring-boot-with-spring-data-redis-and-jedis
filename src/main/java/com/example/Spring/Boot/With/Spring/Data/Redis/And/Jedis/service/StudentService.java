@@ -11,4 +11,6 @@ public interface StudentService {
     List<Student> fetchAllStudents();
 
     Student fetchStudentById(long id);
+
+    Boolean updateStudent(long id, Student student);
 }

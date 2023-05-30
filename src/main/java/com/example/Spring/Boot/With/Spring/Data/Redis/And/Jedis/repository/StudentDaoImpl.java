@@ -41,4 +41,17 @@ public class StudentDaoImpl implements StudentDao{
         student = (Student) redisTemplate.opsForHash().get(KEY, String.valueOf(id));
         return student;
     }
+
+    @Override
+    public Boolean updateStudent(long id, Student student) {
+        try {
+            redisTemplate.opsForHash().delete(KEY, String.valueOf(id));
+            redisTemplate.opsForHash().put(KEY, String.valueOf(id), student);
+
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

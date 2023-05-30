@@ -45,4 +45,15 @@ public class StudentController {
 
         return ResponseEntity.ok().body(student);
     }
+
+    @PutMapping("/student/{id}")
+    public ResponseEntity<String> updateStudent (@PathVariable("id") long id, @RequestBody Student student){
+        Boolean result = studentService.updateStudent(id, student);
+
+        if (result){
+            return ResponseEntity.ok().body("Student Updated Successfully");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
 }

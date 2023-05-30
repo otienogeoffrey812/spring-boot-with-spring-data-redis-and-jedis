@@ -10,4 +10,6 @@ public interface StudentDao {
     List<Student> fetchAllStudents();
 
     Student fetchStudentById(long id);
+
+    Boolean updateStudent(long id, Student student);
 }
