@@ -25,4 +25,9 @@ public class StudentServiceImpl implements StudentService{
     public Student fetchStudentById(long id) {
         return studentDao.fetchStudentById(id);
     }
+
+    @Override
+    public Boolean updateStudent(long id, Student student) {
+        return studentDao.updateStudent(id, student);
+    }
 }
