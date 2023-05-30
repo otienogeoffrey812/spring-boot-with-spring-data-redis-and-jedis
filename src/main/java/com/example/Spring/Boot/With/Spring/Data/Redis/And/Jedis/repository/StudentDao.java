@@ -12,4 +12,6 @@ public interface StudentDao {
     Student fetchStudentById(long id);
 
     Boolean updateStudent(long id, Student student);
+
+    Boolean deleteStudentById(long id);
 }
