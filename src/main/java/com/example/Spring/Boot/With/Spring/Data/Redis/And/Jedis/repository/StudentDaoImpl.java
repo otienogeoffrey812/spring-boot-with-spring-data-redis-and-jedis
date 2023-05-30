@@ -33,4 +33,12 @@ public class StudentDaoImpl implements StudentDao{
         students = redisTemplate.opsForHash().values(KEY);
         return students;
     }
+
+    @Override
+    public Student fetchStudentById(long id) {
+        Student student;
+
+        student = (Student) redisTemplate.opsForHash().get(KEY, String.valueOf(id));
+        return student;
+    }
 }

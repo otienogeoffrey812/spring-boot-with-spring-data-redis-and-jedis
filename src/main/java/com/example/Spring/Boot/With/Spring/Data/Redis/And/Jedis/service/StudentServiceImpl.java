@@ -20,4 +20,9 @@ public class StudentServiceImpl implements StudentService{
     public List<Student> fetchAllStudents() {
         return studentDao.fetchAllStudents();
     }
+
+    @Override
+    public Student fetchStudentById(long id) {
+        return studentDao.fetchStudentById(id);
+    }
 }
