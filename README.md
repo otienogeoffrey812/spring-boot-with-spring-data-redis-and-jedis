@@ -7,9 +7,9 @@ integrating Redis into your Spring Boot application.
 ## Prerequisites
 Before you begin, ensure you have the following in place:
 
-Java 8 or later installed
-Maven build tool
-Redis server installed and running locally
+* Java 8 or later installed
+* Maven build tool
+* Redis server installed and running locally
 
 ## Usage
 You can use this project as a starting point for your own Spring Boot application with Redis caching.
@@ -18,10 +18,11 @@ Feel free to customize and expand the project to meet your specific requirements
 ## Dependencies
 This project uses the following dependencies:
 
-Spring Boot
-Spring Data Redis
-Jedis (Redis Java client)
-Spring Web
+* Spring Boot
+* Spring Data Redis
+* Jedis (Redis Java client)
+* Spring Web
+
 These dependencies are managed through the build tool (Maven).
 
 ## Contributing
