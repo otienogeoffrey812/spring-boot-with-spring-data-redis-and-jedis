@@ -11,12 +11,12 @@ import java.util.List;
 
 @RestController
 
-@RequestMapping("/v1/api")
+@RequestMapping("/")
 public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @PostMapping("/student")
+    @PostMapping("student")
     public ResponseEntity<String> saveStudent(@RequestBody Student student){
         Boolean result = studentService.saveStudent(student);
 
@@ -26,7 +26,7 @@ public class StudentController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-    @GetMapping("/students")
+    @GetMapping("students")
     public ResponseEntity<List<Student>> fetchAllStudents(){
 
         List<Student> students;
@@ -36,7 +36,7 @@ public class StudentController {
         return ResponseEntity.ok().body(students);
     }
 
-    @GetMapping("/student/{id}")
+    @GetMapping("student/{id}")
     public ResponseEntity<Student> fetchStudentById(@PathVariable("id") long id){
 
         Student student;
@@ -46,7 +46,7 @@ public class StudentController {
         return ResponseEntity.ok().body(student);
     }
 
-    @PutMapping("/student/{id}")
+    @PutMapping("student/{id}")
     public ResponseEntity<String> updateStudent (@PathVariable("id") long id, @RequestBody Student student){
         Boolean result = studentService.updateStudent(id, student);
 
@@ -57,7 +57,7 @@ public class StudentController {
         }
     }
 
-    @DeleteMapping("/student/{id}")
+    @DeleteMapping("student/{id}")
     public ResponseEntity<String> deleteStudentById(@PathVariable("id") long id){
         Boolean result = studentService.deleteStudentById(id);
 

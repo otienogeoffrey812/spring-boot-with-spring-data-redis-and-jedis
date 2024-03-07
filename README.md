@@ -31,3 +31,7 @@ If you'd like to contribute to this project, please fork the repository and crea
 ## License
 This repository is released under the MIT license. In short, this means you are free to use this
 software in any personal, open-source or commercial projects.
+
+## Swagger URL
+
+* http://localhost:9001/api/v1/swagger-ui/index.html
